@@ -1,0 +1,92 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400&display=swap" rel="stylesheet">
+    <link href="equation-spinner.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="centralise">
+        
+        <div id="container">
+            
+            <h1> Equation Spinner </h1>
+            
+            <p> Write a js arrow function, taking polar angle <code>theta</code> and animation time <code>t</code> and returning a distance from the origin. Some helpful functions are defined at the top of the js code for this pen. </p>
+            <select id="preset-select">
+                <option value="-1" selected disabled hidden> Presets </option>
+                <option value="0"> sin( 3*( theta - t*twopi ) ) </option>
+                <option value="1"> sin( 3*theta - 2*t*twopi ) </option>
+                <option value="2"> sin( theta/2 ) </option>
+                <option value="3"> cos( 2*theta ) </option>
+                <option value="4"> sin( (theta-pi)/5 ) </option>
+                <option value="5"> sin(theta/7 - twopi * t) </option>
+                <option value="6"> 1 </option>
+                <option value="7"> 1.7 * cos( 5*theta + twopi*t ) * sin( 3*theta ) </option>
+                <option value="8"> lerp( cos( clamp(t*1.06,0,1)*theta ), 1, 20*ramp(t*1.05,1) ) </option>
+                <option value="9"> heart </option>
+            </select>
+      
+            <svg class="loading" width="6" height="6" xmlns="http://www.w3.org/2000/svg" viewbox="-3 -3 6 6">
+                <path id="spinner-path" fill="transparent" stroke="white" stroke-width="0.1" stroke-linecap="round" d="">
+                    <animate id="spinner-animate" attributeName="d" repeatCount="indefinite" dur="2.5s" values=""> </animate>
+                </path>
+            </svg>
+
+            <textarea id="func-textarea">(theta, t) => sin(theta*3);</textarea>
+            
+            <div class="three-cols">
+                <p class="left"> Max <code>theta</code> </p>
+                <input id="theta-slider" class="middle slider" type="range" min="0" max="30" value="3.14" step="0.01"> </input>
+                <input id="theta-number" type="number" class="right number" step="0.01"> </input>
+        
+                <p class="left"> Number of Points </p>
+                <input id="points-slider" class="middle slider" type="range" min="0" max="300" value="60" step="1"> </input>
+                <input id="points-number" type="number" class="right number" step="1"> </input>
+
+                <p class="left"> Duration </p>
+                <input id="duration-slider" class="middle slider" type="range" min="0" max="30" value="2.5" step="0.1"> </input>
+                <input id="duration-number" type="number" class="right number"  step="0.1"> </input>
+
+                <p class="left"> Frame Rate </p>
+                <input id="framerate-slider" class="middle slider" type="range" min="0" max="120" value="30" step="1"> </input>
+                <input id="framerate-number" type="number" class="right number" step="1"> </input>
+
+                <p class="left"> Line Motion </p>
+                <select id="line-motion-select" style="grid-column-start: 2; grid-column-end: 4;">
+                <div id="arrow"> </div>
+                    <option value="0"> No Motion </option>
+                    <option value="1"> Ping Pong </option>
+                    <option value="2" selected="selected"> Stepover </option>
+                    <option value="3"> Crossover </option>
+                </select>
+            </div>
+
+            <button id="compile-button"> Compile Animation (ctrl-a) </button>
+
+            <svg class="loading" width="6" height="6" xmlns="http://www.w3.org/2000/svg" viewbox="-3 -3 6 6">
+                <path id="spinner-path-2" fill="transparent" stroke="white" stroke-width="0.1" stroke-linecap="round" d="">
+                    <animate id="spinner-animate-2" attributeName="d" repeatCount="indefinite" dur="2.5s" values=""> </animate>
+                </path>
+            </svg>
+
+            <button id="show-compiled-button"> Show Compiled Output </button>
+            <p style="font-size: 1.4rem;"> Compiled output (content of <code>&lt;animate&gt;</code> element's <code>"d"</code> tag): </p>
+            <div id="compiled-output-div"> <p id="compiled-output"> </p> </div>
+
+            <p> by <a href="https://github.com/OscarSaharoy" target="_blank"> oscar saharoy </a> </p>
+        </div>
+        
+    </div>
+
+    <script src="equation-spinner.js"> </script>
+</body>
+
+</html>
