@@ -7,3 +7,6 @@ A web app to make little animations/loading spinners from polar curves. You just
 Here's an animation that I made with this tool, the polar function is `r = (theta, t) => lerp( cos( clamp(t*1.06,0,1)*theta ), 1, 20*ramp(t*1.05,1) )`
 
 ![](https://github.com/OscarSaharoy/equation-spinner/blob/master/gif.gif)
+
+
+![](https://github.com/OscarSaharoy/equation-spinner/blob/master/screenshot.jpg)
