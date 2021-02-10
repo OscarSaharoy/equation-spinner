@@ -5,6 +5,3 @@ A web app to make little animations/loading spinners from polar curves. You just
 [link to the web app](https://codepen.io/oscarsaharoy/pen/MWbwqod?editors=1010)
 
 ![](https://github.com/OscarSaharoy/equation-spinner/blob/master/gif.gif)
-
-
-![](https://github.com/OscarSaharoy/equation-spinner/blob/master/screenshot.jpg)
